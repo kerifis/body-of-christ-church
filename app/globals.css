@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --gold-dark: #dbab51;
+  --gold: #d4af37;
+  --gold-light: #fff1a8;
+  --gold-mid: #dd9e16;
+  --shine-angle: 115deg;
+  --shine-speed: 5s;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes shine-move {
+  0% {
+    background-position: 0 0, 200% 0;
+  }
+  to {
+    background-position: 0 0, -200% 0;
+  }
+}
+
+.shiny-text {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  background-image: linear-gradient(
+      90deg,
+      var(--gold-dark) 0,
+      var(--gold) 18%,
+      var(--gold-light) 32%,
+      var(--gold-mid) 50%,
+      var(--gold-light) 68%,
+      var(--gold) 82%,
+      var(--gold-dark) 100%
+    ),
+    linear-gradient(
+      var(--shine-angle),
+      rgba(255, 255, 255, 0) 44%,
+      rgba(255, 241, 168, 1) 50%,
+      rgba(255, 255, 255, 0) 56%
+    );
+  background-size: 200% 100%, 300% 100%;
+  background-position: 0 0, 200% 0;
+  text-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.35);
+  animation: shine-move var(--shine-speed) linear infinite;
+}
+
+.shiny-text.disabled {
+  animation: none;
+  background-image: linear-gradient(
+      90deg,
+      var(--gold-dark) 0,
+      var(--gold) 18%,
+      var(--gold-light) 32%,
+      var(--gold-mid) 50%,
+      var(--gold-light) 68%,
+      var(--gold) 82%,
+      var(--gold-dark) 100%
+    ),
+    linear-gradient(
+      var(--shine-angle),
+      rgba(255, 255, 255, 0) 44%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 56%
+    );
+}
