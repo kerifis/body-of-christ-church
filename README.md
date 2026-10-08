@@ -3,6 +3,7 @@
 Official web application for **Body of Christ Church** in Edmonton, Alberta, Canada.
 
 Live site reference: [https://body-of-christ.netlify.app/](https://body-of-christ.netlify.app/)
+Vercel Production: [https://body-of-christ-church.vercel.app/](https://body-of-christ-church.vercel.app/)
 
 ## Overview
 
