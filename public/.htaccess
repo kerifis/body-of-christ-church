@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+Options -Indexes
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|webp|ico|woff|woff2)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
